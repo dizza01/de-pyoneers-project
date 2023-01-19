@@ -6,7 +6,6 @@ from botocore.exceptions import ClientError
 import time
 import json
 import os
-
 class Lambda_script:
     timestamp = round(time.time())
     code_bucket = 'code-bucket-2022-12-21-1617'
@@ -317,12 +316,15 @@ class Lambda_script:
         time.sleep(6)
         print(f'Permissions for eventbridge to invoke {self.function_name} have now been added >  view cloudwatch logs for more info.')
 
-extract_lambda = Lambda_script('src/extract.py', 'extract.zip', "extract", '5')
-extract_lambda.master()
-transform_lambda = Lambda_script('src/transform.py', 'transform.zip', "transform", '10')
-transform_lambda.master2()
-load_lambda = Lambda_script('src/load.py', 'load.zip', "load", '15')
-load_lambda.master2()
+
+if __name__ == "__main__":
+
+    extract_lambda = Lambda_script('src/extract.py', 'extract.zip', "extract", '5')
+    extract_lambda.master()
+    transform_lambda = Lambda_script('src/transform.py', 'transform.zip', "transform", '10')
+    transform_lambda.master2()
+    load_lambda = Lambda_script('src/load.py', 'load.zip', "load", '15')
+    load_lambda.master2()
 
 
 
