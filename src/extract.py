@@ -7,19 +7,20 @@ import io
 from datetime import datetime 
 import json
 dt = datetime.now()
-MAX_DATE_BUCKET= 'max-date-bucket-2022-12-21-1617'
-EXTRACT_BUCKET = 'ingestion-bucket-2022-12-21-1617'
+MAX_DATE_BUCKET= 'ENTER MAX DATE BUCKET NAME'
+EXTRACT_BUCKET = 'ENTER EXTRACT BUCKET NAME'
 
 
 def lambda_handler(event, context):
     #1.0 extract all data
     def extract():
         try:
-            user = 'project_user_2'
-            host = 'nc-data-eng-totesys-production.chpsczt8h1nu.eu-west-2.rds.amazonaws.com'
-            database = 'totesys'
-            password = 'paxjekPK3hDXu2aXcJ9xyuBS'
-            port = '5432'
+            user = 'DB_USER' #Enter DB User
+            host = 'HOST_NAME' #Enter DB Host Name
+            database = 'DB_NAME' #Enter DB Name
+            password = 'DB_PASSWORD' #Enter DB Password
+            port = 'PORT_NUMBER' #Enter Port Number
+            
             db_string = f"postgresql://{user}:{password}@{host}:5432/{database}"
             engine = create_engine(db_string)
             Session = scoped_session(sessionmaker(bind=engine))
