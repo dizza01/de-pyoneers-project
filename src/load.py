@@ -9,14 +9,14 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 def lambda_handler(event, context):
     
     s3_client = boto3.client('s3')
-    DESTINATION_BUCKET = 'processed-data-bucket-2022-12-21-1617'
+    DESTINATION_BUCKET = 'ENTER DESTINATION BUCKET NAME'
     
     try:
-        user = 'project_team_2'
-        host = 'nc-data-eng-project-dw-prod.chpsczt8h1nu.eu-west-2.rds.amazonaws.com'
-        database = 'postgres'
-        password = 'asVWTyV5kP53PRw'
-        port = '5432'
+        user = 'DB_USER' #Enter DB User
+        host = 'HOST_NAME' #Enter DB Host Name
+        database = 'DB_NAME' #Enter DB Name
+        password = 'DB_PASSWORD' #Enter DB Password
+        port = 'PORT_NUMBER' #Enter Port Number
         db_string = f'postgresql://{user}:{password}@{host}:5432/{database}'
         engine = create_engine(db_string)
         Session = scoped_session(sessionmaker(bind=engine))
