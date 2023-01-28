@@ -8,7 +8,7 @@ from datetime import datetime
 import json
 dt = datetime.now()
 MAX_DATE_BUCKET= 'ENTER MAX DATE BUCKET NAME'
-EXTRACT_BUCKET = 'ENTER EXTRACT BUCKET NAME'
+EXTRACT_BUCKET = 'ENTER INGESTION BUCKET NAME'
 
 
 def lambda_handler(event, context):
