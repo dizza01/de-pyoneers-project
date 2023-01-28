@@ -8,11 +8,11 @@ import json
 import os
 class Lambda_script:
     timestamp = round(time.time())
-    code_bucket = 'code-bucket-2022-12-21-1617'
-    ingestion_bucket ='ingestion-bucket-2022-12-21-1617'
-    processed_data_bucket = 'processed-data-bucket-2022-12-21-1617'
+    code_bucket = ${{ secrets.CODE_BUCKET }}
+    ingestion_bucket = ${{ secrets.INGESTION_BUCKET }}
+    processed_data_bucket = ${{ secrets.PROCESSED_DATA_BUCKET }}
     # function_name = f'de_pyoneers_lambda_{timestamp}'
-    aws_region = 'us-east-1'
+    aws_region = ${{ secrets.AWS_REGION }}
     sts_client = boto3.client('sts')
     caller_identity = sts_client.get_caller_identity()
     aws_account = caller_identity['Account']
