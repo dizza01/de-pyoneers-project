@@ -19,7 +19,7 @@ ETL pipline that migrates data from OLTP Database to OLAP Datawarehouse
 
 
 ## Technical Details
-The primary data source for the project is a moderately complex (but not very large) database called `totesys` which is meant to simulate the back end data of a commercial application. Data is inserted and updated into this database several times a day.
+The primary data source for the project is a moderately complex (but not very large) database which is meant to simulate the back end data of a commercial application. Data is inserted and updated into this database several times a day.
 
 
 The solution is hosted with a special AWS sandbox.
