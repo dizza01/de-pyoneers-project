@@ -1,10 +1,10 @@
-**Project aim**
+## Project Summary
 
-Deploy ETL pipline that migrates data from OLTP Database to OLAP Datawarehouse
+ETL pipline that migrates data from OLTP Database to OLAP Datawarehouse
 
 
 
-**The Minimum Viable Product (MVP)**
+## The Minimum Viable Product (MVP)
 - Two S3 buckets (one for ingested data and one for processed data). Both buckets should be structured and well-organised so that data is easy to find.
 - A Python application that ingests all tables from the source database (details below). The data should be saved in files in the "ingestion" S3 bucket in a suitable format. The application must:
   - operate automatically on a schedule
