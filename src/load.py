@@ -2,7 +2,6 @@ import json
 import boto3
 import io
 import pandas as pd
-import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
